@@ -1,4 +1,4 @@
-# Modified from: https://github.com/huggingface/transformers/blob/main/examples/pytorch/text-classification/run_classification.py
+# Modified from: https://github.com/huggingface/transformers/blob/main/examples/pytorch/token-classification/run_ner.py
 
 from dataclasses import dataclass
 from datargs import parse

@@ -91,3 +91,25 @@ python scripts/run_token_classification.py \
     --per-device-train-batch-size 16 \
     --per-device-eval-batch-size 64 \
     --hub-model-id LazarusNLP/NusaBERT-base-NERP
+
+################################
+# WikiANN
+################################
+
+for lang in ace id map-bms min ms jv su
+do
+    python scripts/run_token_classification.py \
+        --model-checkpoint LazarusNLP/NusaBERT-base \
+        --dataset-name wikiann \
+        --dataset-config $lang \
+        --input-column-name tokens \
+        --target-column-name ner_tags \
+        --output-dir outputs/nusabert-base-wikiann-$lang \
+        --num-train-epochs 100 \
+        --optim adamw_torch_fused \
+        --learning-rate 2e-5 \
+        --weight-decay 0.01 \
+        --per-device-train-batch-size 8 \
+        --per-device-eval-batch-size 64 \
+        --hub-model-id LazarusNLP/NusaBERT-base-WikiANN-$lang
+done
