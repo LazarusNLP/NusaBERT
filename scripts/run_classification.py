@@ -1,6 +1,5 @@
 # Modified from: https://github.com/huggingface/transformers/blob/main/examples/pytorch/text-classification/run_classification.py
 
-import json
 from dataclasses import dataclass
 from datargs import parse
 
