@@ -11,11 +11,33 @@ python scripts/run_mlm.py \
     --weight_decay 0.01 \
     --optim adamw_torch_fused \
     --bf16 \
-    --preprocessing_num_workers 30 \
-    --dataloader_num_workers 30 \
+    --preprocessing_num_workers 24 \
+    --dataloader_num_workers 24 \
     --save_steps 10000 --save_total_limit 3 \
     --output_dir outputs/nusabert-base \
     --overwrite_output_dir \
     --report_to tensorboard \
     --push_to_hub --hub_private_repo \
     --hub_model_id LazarusNLP/nusabert-base
+
+python scripts/run_mlm.py \
+    --model_name_or_path indobenchmark/indobert-large-p1 \
+    --tokenizer_name LazarusNLP/NusaBERT-large \
+    --max_seq_length 128 \
+    --per_device_train_batch_size 256 \
+    --per_device_eval_batch_size 256 \
+    --do_train --do_eval \
+    --max_steps 500000 \
+    --warmup_steps 24000 \
+    --learning_rate 3e-5 \
+    --weight_decay 0.01 \
+    --optim adamw_torch_fused \
+    --bf16 \
+    --preprocessing_num_workers 24 \
+    --dataloader_num_workers 24 \
+    --save_steps 10000 --save_total_limit 3 \
+    --output_dir outputs/nusabert-large \
+    --overwrite_output_dir \
+    --report_to tensorboard \
+    --push_to_hub --hub_private_repo \
+    --hub_model_id LazarusNLP/NusaBERT-large

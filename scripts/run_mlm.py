@@ -381,6 +381,12 @@ def main():
         model = AutoModelForMaskedLM.from_config(config, trust_remote_code=model_args.trust_remote_code)
 
     model.resize_token_embeddings(len(tokenizer))
+    num_new_tokens = len(set(tokenizer.added_tokens_decoder) - set(tokenizer.all_special_ids))
+
+    # https://github.com/huggingface/transformers/issues/1413#issuecomment-1832222759
+    input_embeddings = model.bert.embeddings.word_embeddings.weight.data
+    input_embeddings_avg = input_embeddings[:-num_new_tokens].mean(dim=0, keepdim=True)
+    input_embeddings[-num_new_tokens:] = input_embeddings_avg
 
     # Preprocessing the datasets.
     # First we tokenize all the texts.
