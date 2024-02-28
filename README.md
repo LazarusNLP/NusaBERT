@@ -124,7 +124,7 @@ pip install -r requirements.txt
 
 ## Dataset
 
-We leverage three existing open-source corpora that includes the Indonesian language and regional languages of Indonesia. A summary of the datasets are as follows:
+For pre-training we leverage three existing open-source corpora that includes the Indonesian language and regional languages of Indonesia. A summary of the datasets are as follows:
 
 | Dataset                                                                        | Language               | #documents |
 | ------------------------------------------------------------------------------ | ---------------------- | :--------: |
