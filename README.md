@@ -21,7 +21,9 @@ This project aims to extend the multilingual and multicultural capability of [In
 
 ## Results
 
-We evaluate our models on three benchmarks: [IndoNLU](https://github.com/IndoNLP/indonlu), [NusaX](https://github.com/IndoNLP/nusax), and [NusaWrites](https://github.com/IndoNLP/nusa-writes), which measures the model's natural language understanding, multilingual, and multicultural capabilities. The datasets supports a variety of languages of Indonesia.
+We evaluate our models on three benchmarks: [IndoNLU](https://github.com/IndoNLP/indonlu), [NusaX](https://github.com/IndoNLP/nusax), and [NusaWrites](https://github.com/IndoNLP/nusa-writes), which measures the model's natural language understanding, multilingual, and multicultural capabilities. The datasets supports a variety of languages of Indonesia. 
+
+The values on the table below denotes the F1 score on the test set.
 
 ### IndoNLU (Classification)
 
