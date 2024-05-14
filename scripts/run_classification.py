@@ -5,7 +5,7 @@ from datargs import parse
 
 import evaluate
 import numpy as np
-from datasets import load_dataset
+from datasets import load_dataset, ClassLabel
 from transformers import (
     AutoTokenizer,
     AutoModelForSequenceClassification,
@@ -43,7 +43,12 @@ def main(args: Args):
     if args.target_column_name != "label":
         dataset = dataset.rename_column(args.target_column_name, "label")
 
-    label_list = dataset["train"].features["label"].names
+    try:
+        label_list = dataset["train"].features["label"].names
+    except AttributeError:
+        label_list = sorted(set(dataset["train"]["label"]))
+        dataset = dataset.cast_column("label", ClassLabel(names=label_list))
+
     num_labels = len(label_list)
     label2id = {v: i for i, v in enumerate(label_list)}
     id2label = {i: v for i, v in enumerate(label_list)}

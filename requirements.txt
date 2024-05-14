@@ -1,5 +1,8 @@
+datargs
+accelerate
 transformers
 datasets
 tokenizers
 evaluate
 seqeval
+tensorboardX

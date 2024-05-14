@@ -337,3 +337,26 @@ do
         --per-device-eval-batch-size 64 \
         --hub-model-id LazarusNLP/NusaBERT-large-NusaParagraph-EmoT-$lang
 done
+
+################################
+# NusaDialogue
+################################
+
+for lang in ban bug min
+do
+    python scripts/run_classification.py \
+        --model-checkpoint LazarusNLP/NusaBERT-large \
+        --dataset-name prosa-text/nusa-dialogue \
+        --dataset-config $lang \
+        --input-column-names dialogue \
+        --target-column-name topic \
+        --input-max-length 512 \
+        --output-dir outputs/nusabert-large-nusadialogue-topic-$lang \
+        --num-train-epochs 20 \
+        --optim adamw_torch_fused \
+        --learning-rate 2e-5 \
+        --weight-decay 0.01 \
+        --per-device-train-batch-size 16 \
+        --per-device-eval-batch-size 64 \
+        --hub-model-id LazarusNLP/NusaBERT-large-NusaDialogue-Topic-$lang
+done
