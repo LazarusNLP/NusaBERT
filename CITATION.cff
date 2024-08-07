@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: If you use this software, please cite both the article from preferred-citation and the software itself.
+authors:
+  - family-names: Wilson Wongso
+    given-names: David Samuel Setiawan
+  - family-names: Steven Limcorn
+    given-names: Ananto Joyoadikusumo
+title: 'NusaBERT: Teaching IndoBERT to be Multilingual and Multicultural'
+version: 1.0.0
+url: https://arxiv.org/abs/2403.01817
+date-released: '2024-08-07'
+preferred-citation:
+  authors:
+    - family-names: Wilson Wongso
+      given-names: David Samuel Setiawan
+    - family-names: Steven Limcorn
+      given-names: Ananto Joyoadikusumo
+  title: 'NusaBERT: Teaching IndoBERT to be Multilingual and Multicultural'
+  url: https://arxiv.org/abs/2403.01817
+  type: generic
+  year: '2024'
+  conference: {}
+  publisher: {}

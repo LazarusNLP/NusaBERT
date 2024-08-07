@@ -289,6 +289,22 @@ python scripts/run_pair_token_classification.py \
 
 Pair Token Classification recipes are provided [here](https://github.com/LazarusNLP/NusaBERT/blob/main/run_pair_token_classification.sh).
 
+## Citation
+
+If you use NusaBERT in your research, please cite the following:
+
+```bibtex
+@misc{wongso2024nusabertteachingindobertmultilingual,
+    title = {NusaBERT: Teaching IndoBERT to be Multilingual and Multicultural}, 
+    author = {Wilson Wongso and David Samuel Setiawan and Steven Limcorn and Ananto Joyoadikusumo},
+    year = {2024},
+    eprint = {2403.01817},
+    archivePrefix = {arXiv},
+    primaryClass = {cs.CL},
+    url = {https://arxiv.org/abs/2403.01817}, 
+}
+```
+
 ## Credits
 
 NusaBERT is developed with love by:
